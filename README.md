@@ -11,6 +11,16 @@ dotnet restore
 dotnet run
 ```
 
+You should see an output like this:
+
+```
+QBitRead                 0s=10000        1s=0
+CoinFlip                 0s=4919         1s=5081
+DoubleCoinFlip           0s=5023         1s=4977
+BlindDoubleCoinFlip      0s=10000        1s=0
+Press any key to continue...
+```
+
 ## Explanation
 
 A qubit can be in a Zero or One position, just like a classical bit. Unlike a classical bit, however, a qubit can also be in a _superposition_.
