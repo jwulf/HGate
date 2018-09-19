@@ -1,6 +1,6 @@
 # Hadamard Gate Demo
 
-This Q# Project is a basic project that demonstrates a counter-intuitive quantum behaviour.
+This Q# Project is a basic project that demonstrates a counter-intuitive quantum behaviour using a [Hadamard gate](https://en.wikipedia.org/wiki/Hadamard_transform#Quantum_computing_applications).
 
 I wrote this after attending a Q# workshop lead by [John Azariah](https://ndcsydney.com/speaker/john-azariah) at NDC Sydney 2018, and hearing him describe this behaviour.
 
