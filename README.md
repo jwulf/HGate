@@ -27,6 +27,8 @@ A qubit can be in a Zero or One position, just like a classical bit. Unlike a cl
 
 In a superposition, a qubit (and you've got to imagine this - it's a model) is somewhere on the surface of a hyper-dimensional sphere, where the North and South poles of the sphere are One and Zero, and every other position represents a probability. The equator of the sphere is a 50% probability of either One or Zero. Locations north of the equator represent greater probabilities of One, increasing as you go further north up to 100% when you hit the North pole. Locations south of the equator represent greater probabilities of Zero, increasing as you go further south up to 100% when you hit the South pole.
 
+The probability is collapsed into an actual value as soon as the state of the qubit is observed (the measure operation `M()` in Q#). You can measure the percentage of the probability by doing the same operation one hundred times, and totalling the outcomes.
+
 In classical computers, logic gates shift the state of classical bits between One and Zero. In quantum computers, quantum logic gates shift the position of a qubit on this hyperdimensional sphere, changing the probability of its eventual value when it is observed.
 
 The Hadamard Gate, or H Gate, is a basic quantum logic gate. When applied to a qubit that is located on one of the poles - a solid One or Zero - it moves the qubit to the equator of the the hypersphere. This gives the qubit a 50% probability of now being either a Zero or a One.
