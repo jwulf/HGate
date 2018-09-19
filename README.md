@@ -4,7 +4,7 @@ This Q# Project is a basic project that demonstrates a counter-intuitive quantum
 
 I wrote this after attending a Q# workshop lead by [John Azariah](https://ndcsydney.com/speaker/john-azariah) at NDC Sydney 2018, and hearing him describe this behaviour.
 
-To run it on my computer, with the [Microsoft QDK](https://docs.microsoft.com/en-us/quantum/quantum-installconfig?view=qsharp-preview) installed, I run:
+To run it on my computer, with the [Microsoft Q# SDK](https://docs.microsoft.com/en-us/quantum/quantum-installconfig?view=qsharp-preview) installed, I run:
 
 ```
 dotnet restore
