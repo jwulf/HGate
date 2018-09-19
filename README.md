@@ -29,7 +29,7 @@ In a superposition, a qubit (and you've got to imagine this - it's a model) is s
 
 The probability is collapsed into an actual value as soon as the state of the qubit is observed (the measure operation `M()` in Q#). You can measure the percentage of the probability by doing the same operation one hundred times, and totalling the outcomes.
 
-In classical computers, logic gates shift the state of classical bits between One and Zero. In quantum computers, quantum logic gates shift the position of a qubit on this hyperdimensional sphere, changing the probability of its eventual value when it is observed.
+In classical computers, logic gates shift the state of classical bits between One and Zero. In quantum computers, quantum logic gates (among other operations) shift the position of a qubit on this hyperdimensional sphere, changing the probability of its eventual value when it is observed.
 
 The Hadamard Gate, or H Gate, is a basic quantum logic gate. When applied to a qubit that is located on one of the poles - a solid One or Zero - it moves the qubit to the equator of the the hypersphere. This gives the qubit a 50% probability of now being either a Zero or a One.
 
