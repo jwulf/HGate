@@ -1,4 +1,4 @@
-# Hadamard Gate Demo
+# Hadamard Gate Q# Demo
 
 This Q# Project is a basic project that demonstrates a counter-intuitive quantum behaviour using a [Hadamard gate](https://en.wikipedia.org/wiki/Hadamard_transform#Quantum_computing_applications).
 
