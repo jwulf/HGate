@@ -2,28 +2,30 @@
 
 This Q# Project is a basic project that demonstrates a counter-intuitive quantum behaviour using a [Hadamard gate](https://en.wikipedia.org/wiki/Hadamard_transform#Quantum_computing_applications).
 
-I wrote this after attending a Q# workshop lead by [John Azariah](https://ndcsydney.com/speaker/john-azariah) at NDC Sydney 2018, and hearing him describe this behaviour.
+I wrote this after attending a Q# workshop lead by [John Azariah](https://ndcsydney.com/speaker/john-azariah) at NDC Sydney 2018, and hearing him describe this behaviour, and updated it in March 2021 for the latest release of the Q# SDK.
 
 To run it on my computer, with the [Microsoft Q# SDK](https://docs.microsoft.com/en-us/quantum/quantum-installconfig?view=qsharp-preview) installed, I run:
 
 ```
 dotnet restore
-dotnet run
+dotnet run --project host
 ```
 
 You should see an output like this:
 
 ```
-QBitRead                 0s=10000        1s=0
-CoinFlip                 0s=4919         1s=5081
-DoubleCoinFlip           0s=5023         1s=4977
-BlindDoubleCoinFlip      0s=10000        1s=0
+QBitRead                 Tails=10000     Heads=0
+CoinFlip                 Tails=5012      Heads=4988
+DoubleCoinFlip           Tails=5012      Heads=4988
+BlindDoubleCoinFlip      Tails=10000     Heads=0
 Press any key to continue...
 ```
 
 ## Explanation
 
-A qubit can be in a Zero or One position, just like a classical bit. Unlike a classical bit, however, a qubit can also be in a _superposition_.
+A qubit can be in a Zero or One position, just like a classical bit. (Here we are using the analogy of a coin toss, so we call Zero "Tails" and designate One as "Heads")
+
+Unlike a classical bit, however, a qubit can also be in a _superposition_.
 
 In a superposition, a qubit (and you've got to imagine this - it's a model) is somewhere on the surface of a hyper-dimensional sphere, where the North and South poles of the sphere are One and Zero, and every other position represents a probability. The equator of the sphere is a 50% probability of either One or Zero. Locations north of the equator represent greater probabilities of One, increasing as you go further north up to 100% when you hit the North pole. Locations south of the equator represent greater probabilities of Zero, increasing as you go further south up to 100% when you hit the South pole.
 
