@@ -17,10 +17,10 @@
     operation QBitRead (iterations: Int) : (Int, Int) {
         mutable numHeads = 0; // 1
         mutable numTails = 0; // 0
-        use qubit = Qubit[1] {      // Qubit in Zero state
+        use qubit = Qubit[1] {                  // Qubit in Zero state
             for test in 1..iterations {
-                Set (Zero, qubit[0]);                // Set the qubit to Zero
-                let state = M(qubit[0]);            // Measure the value of the q-bit
+                Set (Zero, qubit[0]);           // Set the qubit to Zero
+                let state = M(qubit[0]);        // Measure the value of the q-bit
                 if (state == Zero) {
                     set numTails = numTails + 1;
                 }
@@ -38,11 +38,11 @@
     operation CoinFlip (iterations: Int) : (Int, Int) {
         mutable numHeads = 0; // 1
         mutable numTails = 0; // 0
-        use qubit = Qubit[1] {      // Qubit in Zero state
+        use qubit = Qubit[1] {                  // Qubit in Zero state
             for test in 1..iterations {
-                Set (Zero, qubit[0]);                // Set the qubit to Zero
-                H(qubit[0]);                        // Pass through Hadamard Gate - gives 50% probability
-                let state = M(qubit[0]);            // Measure the value of the q-bit
+                Set (Zero, qubit[0]);           // Set the qubit to Zero
+                H(qubit[0]);                    // Pass through Hadamard Gate - gives 50% probability
+                let state = M(qubit[0]);        // Measure the value of the q-bit
                 if (state == Zero) {
                     set numTails = numTails + 1;
                 }
@@ -63,11 +63,11 @@
         mutable numTails = 0; // 0
         use qubit = Qubit[1] {                  // Get a single qubit
             for test in 1..iterations {
-                Set (Zero, qubit[0]);                // Set the qubit to Zero
-                H(qubit[0]);                        // Pass through Hadamard Gate - gives 50% probability
-                let observation = M(qubit[0]);      // Measure the value of the q-bit
-                H(qubit[0]);                        // Flip it again
-                let state = M(qubit[0]);            // Measure the value of the q-bit
+                Set (Zero, qubit[0]);           // Set the qubit to Zero
+                H(qubit[0]);                    // Pass through Hadamard Gate - gives 50% probability
+                let observation = M(qubit[0]);  // Measure the value of the q-bit
+                H(qubit[0]);                    // Flip it again
+                let state = M(qubit[0]);        // Measure the value of the q-bit
                 if (state == Zero) {
                     set numTails = numTails + 1;
                 }
@@ -79,6 +79,7 @@
         }
         return (numTails, numHeads); 
     }
+
     // Here we pass a q-bit set to zero through a Hadamard gate. On the other side we get a q-bit with a 50% probability of a 1 or 0 state.
     // However, we perform no measurement, and thus do not collapse the probability waveform.
     // We then pass it through a second Hadamard gate, and perform the measurement on the other side of that gate.
@@ -87,10 +88,33 @@
         mutable numTails = 0; // 0
         use qubit = Qubit[1] {                  // Get a single qubit
             for test in 1..iterations {
-                Set (Zero, qubit[0]);                // Set the qubit to Zero
-                H(qubit[0]);                        // Pass through Hadamard Gate - gives 50% probability
-                H(qubit[0]);                        // Flip it again
-                let state = M(qubit[0]);            // Measure the value of the q-bit
+                Set (Zero, qubit[0]);           // Set the qubit to Zero
+                H(qubit[0]);                    // Pass through Hadamard Gate - gives 50% probability
+                H(qubit[0]);                    // Flip it again
+                let state = M(qubit[0]);        // Measure the value of the q-bit
+                if (state == Zero) {
+                    set numTails = numTails + 1;
+                }
+                if (state == One) {
+                    set numHeads = numHeads + 1;
+                }
+            }
+            ResetAll(qubit);
+        }
+        return (numTails, numHeads);
+    } 
+
+    // Here we do the same experiment as the previous one, but starting with the q-bit in the One state
+    // This demonstrates that the second H-gate returns it to its original state
+    operation BlindDoubleCoinFlip2 (iterations: Int) : (Int, Int) {
+        mutable numHeads = 0; // 1
+        mutable numTails = 0; // 0
+        use qubit = Qubit[1] {                  // Get a single qubit
+            for test in 1..iterations {
+                Set (One, qubit[0]);            // Set the qubit to One
+                H(qubit[0]);                    // Pass through Hadamard Gate - gives 50% probability
+                H(qubit[0]);                    // Flip it again
+                let state = M(qubit[0]);        // Measure the value of the q-bit
                 if (state == Zero) {
                     set numTails = numTails + 1;
                 }

@@ -26,6 +26,9 @@ namespace JoshWulf.Quantum.Hgate
                 (numTails, numHeads) = res;
                 System.Console.WriteLine($"BlindDoubleCoinFlip \t Tails={numTails,0} \t Heads={numHeads,0}");
 
+                res = BlindDoubleCoinFlip2.Run(sim, count).Result;
+                (numTails, numHeads) = res;
+                System.Console.WriteLine($"BlindDoubleCoinFlip2 \t Tails={numTails,0} \t Heads={numHeads,0}");
             }
             System.Console.WriteLine("Press any key to continue...");
             System.Console.ReadKey();

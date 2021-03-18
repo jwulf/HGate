@@ -18,6 +18,7 @@ QBitRead                 Tails=10000     Heads=0
 CoinFlip                 Tails=5012      Heads=4988
 DoubleCoinFlip           Tails=5012      Heads=4988
 BlindDoubleCoinFlip      Tails=10000     Heads=0
+BlindDoubleCoinFlip2     Tails=0         Heads=10000
 Press any key to continue...
 ```
 
