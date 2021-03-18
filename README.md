@@ -38,19 +38,19 @@ The Hadamard Gate, or H Gate, is a basic quantum logic gate. When applied to a q
 The "BitRead" operation in this project does 10,000 reads of a qubit set to Zero. As you would expect, this returns 10,000 Zeros.
 
 ```
-QBitRead                 0s=10000        1s=0
+QBitRead                 Tails=10000        Heads=0
 ```
 
 The "CoinFlip" operation in this project demonstrates the action of the H Gate. A qubit is set to Zero and passed through the H Gate, and its state examined, 10,000 times. This produces a pretty clear 50-50 distribution - resulting in 5000 Ones and 5000 Zeros, +- ~3%.
 
 ```
-CoinFlip                 0s=5026         1s=4974
+CoinFlip                 Tails=5026         Heads=4974
 ```
 
 In the "DoubleCoinFlip" operation, we set the qubit to Zero and pass it through the H Gate. We then examine its state. We then pass it through the H Gate again, and again examine its state, and total the results of this observation. In this case we see the same 50-50 distribution. That's what we'd expect - both Ones and Zeros are sent to the equator of the hypersphere, so no matter which of the two states - One or Zero - the qubit has when it enters the H Gate in the second pass, it is again "shuffled" with the same probability.
 
 ```
-DoubleCoinFlip           0s=4970         1s=5030
+DoubleCoinFlip           Tails=4970         Heads=5030
 ```
 
 Now here is where it gets quantum weird.
@@ -62,7 +62,7 @@ In this case, when we look at the qubit it is Zero.
 Every. Single. Time.
 
 ```
-BlindDoubleCoinFlip      0s=10000        1s=0
+BlindDoubleCoinFlip      Tails=10000        Heads=0
 ```
 
 What????
